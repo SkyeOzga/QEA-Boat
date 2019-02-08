@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     37064,        808]
-NotebookOptionsPosition[     35377,        777]
-NotebookOutlinePosition[     35710,        792]
-CellTagsIndexPosition[     35667,        789]
+NotebookDataLength[     44542,       1003]
+NotebookOptionsPosition[     42342,        965]
+NotebookOutlinePosition[     42675,        980]
+CellTagsIndexPosition[     42632,        977]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -577,7 +577,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{
        RowBox[{"Tan", "[", 
-        RowBox[{"30", "*", 
+        RowBox[{"\[Theta]", "*", 
          RowBox[{"\[Pi]", "/", "180"}]}], "]"}], "*", "x"}], "+", "draft"}]}],
      ",", 
     RowBox[{"{", 
@@ -711,18 +711,22 @@ Cell[BoxData[{
    3.758630936916267*^9}, {3.7586309960587254`*^9, 3.758631023995202*^9}, {
    3.758631059042384*^9, 3.7586310953468237`*^9}, {3.758631163853361*^9, 
    3.7586311885743103`*^9}, {3.758631348897338*^9, 3.758631472968299*^9}, 
-   3.758631529180932*^9, {3.758631603154644*^9, 3.758631625283304*^9}},
+   3.758631529180932*^9, {3.758631603154644*^9, 3.758631625283304*^9}, {
+   3.758634149614357*^9, 3.758634151135195*^9}, {3.758634318732771*^9, 
+   3.758634320369996*^9}},
  CellLabel->
-  "In[227]:=",ExpressionUUID->"e9cb12b6-5385-4e34-bdf4-f6e4eabe8d39"],
+  "In[235]:=",ExpressionUUID->"e9cb12b6-5385-4e34-bdf4-f6e4eabe8d39"],
 
 Cell["\<\
 RightingMoment successfully calculates the vector torque exerted by the water \
 on a boat with a hull shape defined by a given region, density as a given \
-function of {x,y,z}, and a given heel angle. Units are in kg and m, to \
-convert to cm and g replace any instance of the number 1000 with the number 1.\
+function of {x,y,z}, and a given heel angle in degrees. Units are in kg and \
+m, to convert to cm and g replace any instance of the number 1000 with the \
+number 1.\
 \>", "Text",
- CellChangeTimes->{{3.758631655707296*^9, 
-  3.7586318357246447`*^9}},ExpressionUUID->"0362e50e-0645-4a70-a46b-\
+ CellChangeTimes->{{3.758631655707296*^9, 3.7586318357246447`*^9}, {
+  3.758633174772403*^9, 
+  3.758633177839772*^9}},ExpressionUUID->"0362e50e-0645-4a70-a46b-\
 33bcd23eb994"],
 
 Cell[CellGroupData[{
@@ -738,24 +742,24 @@ Cell[BoxData[
   3.7586309126292887`*^9, 3.758630917316928*^9}, {3.758631494638597*^9, 
   3.758631498347582*^9}},
  CellLabel->
-  "In[234]:=",ExpressionUUID->"1c374ef3-8aff-4942-9104-f7a0bd0701ef"],
+  "In[242]:=",ExpressionUUID->"1c374ef3-8aff-4942-9104-f7a0bd0701ef"],
 
 Cell[BoxData[
  TemplateBox[{
   "NSolve","ratnz",
    "\"NSolve was unable to solve the system with inexact coefficients. The \
 answer was obtained by solving a corresponding exact system and numericizing \
-the result.\"",2,234,63,25813814693786874043,"Local"},
+the result.\"",2,242,64,25813814693786874043,"Local"},
   "MessageTemplate"]], "Message", "MSG",
  CellChangeTimes->{
   3.758595954610167*^9, 3.758596011226853*^9, 3.758596088782255*^9, 
    3.758630701483211*^9, {3.758630739736866*^9, 3.758630763479589*^9}, 
    3.7586308513697777`*^9, {3.75863091864509*^9, 3.758630943000909*^9}, 
    3.758631499569334*^9, 3.758631534982587*^9, {3.758631616687993*^9, 
-   3.758631630336055*^9}},
+   3.758631630336055*^9}, 3.758634325670121*^9},
  CellLabel->
   "During evaluation of \
-In[234]:=",ExpressionUUID->"0ed8f0f0-3c64-48ed-bcc4-b1660631a965"],
+In[242]:=",ExpressionUUID->"9983e95c-1e85-4c6a-94ad-a653d3aa2f86"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -770,9 +774,193 @@ Cell[BoxData[
    3.758596088796342*^9, 3.7586307014961*^9, {3.758630739749694*^9, 
    3.7586307640499496`*^9}, 3.758630851384267*^9, {3.758630918691845*^9, 
    3.75863094303738*^9}, 3.7586314996596193`*^9, 3.758631536360794*^9, {
-   3.758631618101844*^9, 3.758631631736607*^9}},
+   3.758631618101844*^9, 3.758631631736607*^9}, 3.758634327096287*^9},
  CellLabel->
-  "Out[234]=",ExpressionUUID->"44d58aef-f0f1-47a9-ae74-ff463703d7f7"]
+  "Out[242]=",ExpressionUUID->"c8a02b25-eff9-47f9-979c-8f91e3fc3102"]
+}, Open  ]],
+
+Cell["\<\
+While this is all fine and dandy, if we\[CloseCurlyQuote]re going to be \
+looking at 3D boats, we might as well look at how it\[CloseCurlyQuote]s going \
+to right itself in 3D, meaning taking into consideration longitudinal tip as \
+well as heel\
+\>", "Text",
+ CellChangeTimes->{{3.758633098523307*^9, 3.758633164241749*^9}, {
+  3.75863409528867*^9, 
+  3.758634101082673*^9}},ExpressionUUID->"0e5fb6bc-498a-466b-a5bd-\
+a7ff9c086dec"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Waterline3D", "[", 
+   RowBox[{"\[Theta]_", ",", " ", "\[Phi]_"}], "]"}], ":=", " ", 
+  RowBox[{"ImplicitRegion", "[", 
+   RowBox[{
+    RowBox[{"z", "\[LessEqual]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Tan", "[", 
+        RowBox[{"\[Theta]", "*", 
+         RowBox[{"\[Pi]", "/", "180"}]}], "]"}], "*", "x"}], "+", 
+      RowBox[{
+       RowBox[{"Tan", "[", 
+        RowBox[{"\[Phi]", "*", 
+         RowBox[{"\[Pi]", "/", "180"}]}], "]"}], "*", "y"}], "+", "draft"}]}],
+     ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"y", ",", "0", ",", "10"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "0", ",", "2"}], "}"}]}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CalculateDraft3D", "[", 
+   RowBox[{
+   "boatregion_", ",", " ", "boatdensity_", ",", " ", "\[Theta]_", ",", " ", 
+    "\[Phi]_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"NSolve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Integrate", "[", 
+       RowBox[{"1", ",", " ", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Element]", 
+         RowBox[{"RegionIntersection", "[", 
+          RowBox[{"boatregion", ",", " ", 
+           RowBox[{"Waterline3D", "[", 
+            RowBox[{"\[Theta]", ",", " ", "\[Phi]"}], "]"}]}], "]"}]}]}], 
+       "]"}], "\[Equal]", 
+      RowBox[{
+       RowBox[{"Mass", "[", 
+        RowBox[{"boatregion", ",", " ", "boatdensity"}], "]"}], "/", 
+       "1000"}]}], ",", " ", "draft"}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DisplacedWater3D", "[", 
+   RowBox[{
+   "boatregion_", ",", " ", "boatdensity_", ",", " ", "\[Theta]_", ",", " ", 
+    "\[Phi]_"}], "]"}], ":=", " ", 
+  RowBox[{
+   RowBox[{"RegionIntersection", "[", 
+    RowBox[{"boatregion", ",", " ", 
+     RowBox[{"Waterline3D", "[", 
+      RowBox[{"\[Theta]", ",", " ", "\[Phi]"}], "]"}]}], "]"}], "/.", 
+   RowBox[{"CalculateDraft3D", "[", 
+    RowBox[{
+    "boatregion", ",", " ", "boatdensity", ",", " ", "\[Theta]", ",", " ", 
+     "\[Phi]"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CenterOfBuoyancy3D", "[", 
+   RowBox[{
+   "boatregion_", ",", " ", "boatdensity_", ",", " ", "\[Theta]_", ",", " ", 
+    "\[Phi]_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"1000", "/", 
+    RowBox[{"Mass", "[", 
+     RowBox[{"boatregion", ",", " ", "boatdensity"}], "]"}]}], " ", "*", " ", 
+   
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", " ", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Element]", 
+      RowBox[{"DisplacedWater3D", "[", 
+       RowBox[{
+       "boatregion", ",", " ", "boatdensity", ",", " ", "\[Theta]", ",", " ", 
+        "\[Phi]"}], "]"}]}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RightingMoment3D", "[", 
+   RowBox[{
+   "boatregion_", ",", " ", "boatdensity_", ",", " ", "\[Theta]_", ",", " ", 
+    "\[Phi]_"}], "]"}], ":=", 
+  RowBox[{"Cross", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"CenterOfBuoyancy3D", "[", 
+      RowBox[{
+      "boatregion", ",", " ", "boatdensity", ",", " ", "\[Theta]", ",", " ", 
+       "\[Phi]"}], "]"}], "-", 
+     RowBox[{"CenterOfMass", "[", 
+      RowBox[{"boatregion", ",", " ", "boatdensity"}], "]"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{"Mass", "[", 
+      RowBox[{"boatregion", ",", " ", "boatdensity"}], "]"}], "*", "9.8", "*", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         RowBox[{"Tan", "[", 
+          RowBox[{"\[Theta]", "*", 
+           RowBox[{"\[Pi]", "/", "180"}]}], "]"}]}], ",", " ", 
+        RowBox[{"-", 
+         RowBox[{"Tan", "[", 
+          RowBox[{"\[Phi]", "*", 
+           RowBox[{"\[Pi]", "/", "180"}]}], "]"}]}], ",", "1"}], "}"}], "/", 
+      RowBox[{"Norm", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", 
+          RowBox[{"Tan", "[", 
+           RowBox[{"\[Theta]", "*", 
+            RowBox[{"\[Pi]", "/", "180"}]}], "]"}]}], ",", " ", 
+         RowBox[{"-", 
+          RowBox[{"Tan", "[", 
+           RowBox[{"\[Phi]", "*", 
+            RowBox[{"\[Pi]", "/", "180"}]}], "]"}]}], ",", "1"}], "}"}], 
+       "]"}]}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.758634135129162*^9, 3.758634135196986*^9}, {
+   3.758634291470042*^9, 3.758634299184803*^9}, 3.7586343390893*^9, {
+   3.758634680751032*^9, 3.7586346962187433`*^9}, {3.7586349217815323`*^9, 
+   3.758635044880867*^9}, {3.758635685463133*^9, 3.758635756353087*^9}, {
+   3.7586358236047907`*^9, 3.758635890804118*^9}},
+ CellLabel->
+  "In[245]:=",ExpressionUUID->"c4ccfa6a-7300-445a-adb0-75d95d95677c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RightingMoment3D", "[", 
+  RowBox[{"hullreg", ",", " ", "boatdens", ",", "30", ",", " ", "30"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.758635774127324*^9, 3.7586357744701014`*^9}, {
+  3.758635805279166*^9, 3.758635808154381*^9}, {3.7586358621121283`*^9, 
+  3.758635862409328*^9}, {3.758635911180572*^9, 3.7586359259644413`*^9}, {
+  3.758635973200005*^9, 3.7586359785698442`*^9}, {3.758636061647235*^9, 
+  3.7586360657679768`*^9}},
+ CellLabel->
+  "In[255]:=",ExpressionUUID->"001e720b-3d90-4306-909f-f7f5fad3451d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NSolve","ratnz",
+   "\"NSolve was unable to solve the system with inexact coefficients. The \
+answer was obtained by solving a corresponding exact system and numericizing \
+the result.\"",2,255,69,25813814693786874043,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.758635982488493*^9, 3.758636069892058*^9},
+ CellLabel->
+  "During evaluation of \
+In[255]:=",ExpressionUUID->"3a27f075-7e91-490a-a283-3ef4bf7f86ad"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"507698.1493239451`", ",", 
+   RowBox[{"-", "50172.30547353547`"}], ",", "264152.66910824465`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.758635775130196*^9, 3.758635809211595*^9, {3.7586359016632967`*^9, 
+   3.758635931352446*^9}, {3.75863597623428*^9, 3.758635982500596*^9}, 
+   3.758636071342039*^9},
+ CellLabel->
+  "Out[255]=",ExpressionUUID->"a68fba98-12e6-4c76-8d6e-25278dd61f29"]
 }, Open  ]]
 },
 WindowSize->{927, 1025},
@@ -803,12 +991,19 @@ Cell[6543, 184, 749, 21, 40, "Output",ExpressionUUID->"3ecc9e30-54fa-4976-aa34-e
 Cell[7295, 207, 2514, 70, 64, "Output",ExpressionUUID->"55360134-e7b7-4ab7-8e28-5fe205064a63"],
 Cell[9812, 279, 16926, 288, 358, "Output",ExpressionUUID->"9df849fd-4196-4d80-9898-f7f37cf8b91b"]
 }, Open  ]],
-Cell[26753, 570, 5931, 145, 354, "Input",ExpressionUUID->"e9cb12b6-5385-4e34-bdf4-f6e4eabe8d39"],
-Cell[32687, 717, 459, 8, 81, "Text",ExpressionUUID->"0362e50e-0645-4a70-a46b-33bcd23eb994"],
+Cell[26753, 570, 6037, 147, 354, "Input",ExpressionUUID->"e9cb12b6-5385-4e34-bdf4-f6e4eabe8d39"],
+Cell[32793, 719, 521, 10, 81, "Text",ExpressionUUID->"0362e50e-0645-4a70-a46b-33bcd23eb994"],
 Cell[CellGroupData[{
-Cell[33171, 729, 660, 11, 31, "Input",ExpressionUUID->"1c374ef3-8aff-4942-9104-f7a0bd0701ef"],
-Cell[33834, 742, 738, 15, 41, "Message",ExpressionUUID->"0ed8f0f0-3c64-48ed-bcc4-b1660631a965"],
-Cell[34575, 759, 786, 15, 40, "Output",ExpressionUUID->"44d58aef-f0f1-47a9-ae74-ff463703d7f7"]
+Cell[33339, 733, 660, 11, 31, "Input",ExpressionUUID->"1c374ef3-8aff-4942-9104-f7a0bd0701ef"],
+Cell[34002, 746, 760, 15, 41, "Message",ExpressionUUID->"9983e95c-1e85-4c6a-94ad-a653d3aa2f86"],
+Cell[34765, 763, 808, 15, 40, "Output",ExpressionUUID->"c8a02b25-eff9-47f9-979c-8f91e3fc3102"]
+}, Open  ]],
+Cell[35588, 781, 443, 9, 58, "Text",ExpressionUUID->"0e5fb6bc-498a-466b-a5bd-a7ff9c086dec"],
+Cell[36034, 792, 4820, 132, 377, "Input",ExpressionUUID->"c4ccfa6a-7300-445a-adb0-75d95d95677c"],
+Cell[CellGroupData[{
+Cell[40879, 928, 541, 10, 31, "Input",ExpressionUUID->"001e720b-3d90-4306-909f-f7f5fad3451d"],
+Cell[41423, 940, 470, 10, 41, "Message",ExpressionUUID->"3a27f075-7e91-490a-a283-3ef4bf7f86ad"],
+Cell[41896, 952, 430, 10, 35, "Output",ExpressionUUID->"a68fba98-12e6-4c76-8d6e-25278dd61f29"]
 }, Open  ]]
 }
 ]
