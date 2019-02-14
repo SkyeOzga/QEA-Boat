@@ -1,0 +1,32 @@
+Scenario 1
+
+BOUNDARY ID, 10
+----------------
+ Area, 856.625, cm^2
+ sum FX, -1.82686, Newton
+ sum FY, -4.70799, Newton
+ sum FZ, -0.135658, Newton
+ Center of Force about X-Axis (Y-Z), 25.3941, 31.4362, cm
+ Center of Force about Y-Axis (X-Z), 49.2728, 31.2882, cm
+ Center of Force about Z-Axis (X-Y), 60.5286, 23.3681, cm
+
+BOUNDARY ID, 3
+----------------
+ Area, 893.626, cm^2
+ sum FX, -0.922772, Newton
+ sum FY, -0.566728, Newton
+ sum FZ, 0.172077, Newton
+ Center of Force about X-Axis (Y-Z), 30.3236, 31.6377, cm
+ Center of Force about Y-Axis (X-Z), 10.8612, 33.4805, cm
+ Center of Force about Z-Axis (X-Y), 58.5893, 28.8784, cm
+
+
+Summary
+-------------------
+Total area, 1750.25, cm^2
+TOTAL FX, -2.74963, Newton
+TOTAL FY, -5.27472, Newton
+TOTAL FZ, 0.0364185, Newton
+Center of Force about X-Axis (Y-Z), 27.0484, 31.5038, cm
+Center of Force about Y-Axis (X-Z), 45.1458, 31.5238, cm
+Center of Force about Z-Axis (X-Y), 51.3651, 49.4039, cm
